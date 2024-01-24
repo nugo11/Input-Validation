@@ -3,6 +3,7 @@ let button = document.getElementsByTagName("button")[0];
 let span = document.getElementsByTagName("span");
 let img = document.getElementsByTagName("img");
 
+
 for (let a = 0; a < span.length - 1; a++) {
   span[a].style.display = "none";
 }
@@ -43,6 +44,11 @@ for (let o = 0; o < input.length; o++) {
       if (o === 2 && input[o].value === "") {
         input[2].placeholder = "email@example/com";
         input[2].classList.add("class");
+      } 
+      if (o === 2 && !input[o].value.includes('@')) {
+        input[o].style.border = "2px solid #FF7979";
+        span[o].style.display = "flex";
+        img[o].style.display = "block";
       }
     }, 300);
   });
